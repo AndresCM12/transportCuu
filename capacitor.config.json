@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "transporte-cuu",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
