@@ -1,0 +1,51 @@
+* {
+  font-family: "Rubik";
+}
+ion-content {
+  --background: var(--background-color);
+}
+div.form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  justify-content: center;
+
+  ion-title {
+    font-family: "Rubik-medium";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: left;
+    padding-inline: 0px;
+    margin-bottom: 40px;
+  }
+  ion-label {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  ion-input {
+    width: 300px;
+    height: 49px;
+    margin-top: 10px;
+    margin-bottom: 41px;
+    border-radius: 10px;
+    background-color: var(--foreground-color);
+    --padding-bottom: 4px;
+    --padding-end: 4px;
+    --padding-start: 16px;
+    --padding-top: 4px;
+  }
+  form{
+    display: grid;
+  }
+  ion-button{
+    justify-self: center;
+  }
+}

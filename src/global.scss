@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -25,4 +25,51 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-//Just a test
+//Font
+@font-face {
+  font-family: "Rubik";
+  src: url("./assets/fonts/Rubik-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Rubik-medium";
+  src: url("./assets/fonts/Rubik-Medium.ttf") format("truetype");
+}
+
+//Buttons style
+.small-button {
+  width: 190px;
+  height: 44px;
+}
+.medium-button {
+  --background: var(--foreground-color);
+  --background-activated: var(--foreground-color);
+  --background-activated-opacity: 1;
+  --background-focused: var(--foreground-color);
+  --background-focused-opacity: 1;
+  --background-hover: var(--foreground-color);
+  --background-hover-opacity: 1;
+  --border-color: none;
+  --border-radius: 40px;
+  --border-style: none;
+  --border-width: 8px;
+  --box-shadow: none;
+  --color: #ffffff;
+  --color-activated: #ffffff;
+  --color-focused: #ffffff;
+  --color-hover: #ffffff;
+  --opacity: 1;
+  --ripple-color: #1e1e1e;
+  --transition: background-color 15ms linear;
+  width: 190px;
+  height: 44px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: none;
+}
+.large-button {
+  width: 190px;
+  height: 44px;
+}
