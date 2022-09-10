@@ -35,6 +35,12 @@
   src: url("./assets/fonts/Rubik-Medium.ttf") format("truetype");
 }
 
+
+*{
+  font-family: "Rubik";
+  color: var(--text-color)!important;
+}
+
 //Buttons style
 .small-button {
   width: 190px;
@@ -62,9 +68,8 @@
   --transition: background-color 15ms linear;
   width: 190px;
   height: 44px;
-  font-family: "Rubik";
+  font-family: "Rubik-medium";
   font-style: normal;
-  font-weight: 500;
   font-size: 14px;
   line-height: 17px;
   text-transform: none;
@@ -72,4 +77,7 @@
 .large-button {
   width: 190px;
   height: 44px;
+}
+ion-content{
+  --background: var(--background-color);
 }
