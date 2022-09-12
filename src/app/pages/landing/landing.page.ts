@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.page.scss'],
 })
 export class LandingPage implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  navigateTo() {
+    this.router.navigate(['map']);
   }
-
 }

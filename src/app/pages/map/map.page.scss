@@ -1,0 +1,134 @@
+#map {
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#map.visible {
+  opacity: 1;
+}
+#map.hidden {
+  opacity: 0;
+}
+ion-toolbar {
+  --background: var(--background-color);
+  height: 55px;
+  display: grid;
+  align-items: center;
+  ion-title {
+    font-family: "Rubik-medium";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+#searchBar {
+  width: 95%;
+  max-width: 450px;
+  height: 50px;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 40px;
+  left: calc(50%);
+  transform: translateX(-50%);
+  background-color: var(--background-color);
+  z-index: 2;
+  padding-inline: 12px;
+  h1 {
+    font-size: 14px;
+    margin: 0px;
+  }
+  ion-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+ion-content {
+  --background: var(--foreground-color);
+}
+ion-button {
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  left: calc(50%);
+  transform: translateX(-50%);
+}
+#breadCrumbsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 95%;
+  max-width: 350px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  .breadCrumb {
+    cursor: pointer;
+    border-radius: 20px;
+    height: 35px;
+    width: 100px;
+    background-color: var(--background-color);
+    display: grid;
+    place-items: center;
+    p {
+      font-size: 12px;
+      color: var(--text-color);
+      font-family: "Rubik-medium";
+      font-style: normal;
+      font-weight: 500;
+      width: fit-content;
+      margin-inline: auto;
+      margin-block: 0px;
+    }
+  }
+}
+
+ion-menu {
+  .menu-header-wrapper {
+    background-color: var(--background-color);
+    padding-left: 18px;
+    padding-top: 54px;
+    ion-avatar {
+      background-color: white;
+    }
+
+    h1 {
+      font-family: "Rubik-medium";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--text-color);
+      margin-block-start: 16px;
+      margin-block-end: 2px;
+    }
+    h2 {
+      font-family: "Rubik";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      opacity: 50%;
+      color: var(--text-color);
+      margin-block: 0px;
+      margin-block-end: 8px;
+    }
+  }
+  ion-list {
+    background-color: var(--foreground-color);
+    ion-item {
+      --background: var(--foreground-color);
+      ion-icon {
+        opacity: 60%!important;
+      }
+      ion-label{
+        font-family: 'Rubik';
+        font-size: 16px;
+      }
+    }
+  }
+
+}
