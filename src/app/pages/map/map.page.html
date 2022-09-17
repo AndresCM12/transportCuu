@@ -1,24 +1,50 @@
-<!-- <ion-header mode="ios">
-  <ion-toolbar>
-    <ion-title>Mapa</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button
-        icon="chevron-back"
-        defaultHref="/landing"
-      ></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header> -->
-
 <ion-content>
-  <div id="searchBar">
+  <div id="searchBar" [ngClass]="isSearchBarClicked ? 'opened' : ''">
     <ion-icon
       slot="icon-only"
       (click)="openSideMenu()"
       name="menu-sharp"
     ></ion-icon>
-    <h1>Busca puntos en la ciudad</h1>
-    <ion-icon slot="icon-only" name="search-sharp"></ion-icon>
+    <h1 (click)="toggleSearchBarResults('open')">Busca puntos en la ciudad</h1>
+    <ion-icon
+      slot="icon-only"
+      [name]="!isSearchBarClicked ? 'search-sharp' : 'close-sharp'"
+      (click)="toggleSearchBarResults()"
+    ></ion-icon>
+  </div>
+  <div id="searchBarResults" [ngClass]="isSearchBarClicked ? 'opened' : ''">
+    <ion-list>
+      <ion-item lines="full" detail="true">
+        <ion-icon slot="start" name="location-sharp"></ion-icon>
+        <ion-label>
+          <h3>Tacos el tommy</h3>
+          <p>Viernes 4:40pm, 10/09/2022</p>
+        </ion-label>
+      </ion-item>
+      <ion-item detail="true">
+        <ion-icon slot="start" name="location-sharp"></ion-icon>
+        <ion-label
+          ><h3>Bar de puebla</h3>
+          <p>Viernes 4:40pm, 10/09/2022</p></ion-label
+        >
+      </ion-item>
+      <ion-item detail="true">
+        <ion-icon slot="start" name="location-sharp"></ion-icon>
+
+        <ion-label
+          ><h3>La cantina buena</h3>
+          <p>Viernes 4:40pm, 10/09/2022</p></ion-label
+        >
+      </ion-item>
+      <ion-item detail="true">
+        <ion-icon slot="start" name="location-sharp"></ion-icon>
+
+        <ion-label
+          ><h3>Lonches el guero</h3>
+          <p>Viernes 4:40pm, 10/09/2022</p></ion-label
+        >
+      </ion-item>
+    </ion-list>
   </div>
   <div id="breadCrumbsContainer">
     <div class="breadCrumb">
@@ -34,7 +60,10 @@
   </div>
   <div id="map" [ngClass]="!mapVisibility? 'hidden': 'visible' "></div>
 
-  <ion-button class="large-button"> Añadir punto </ion-button>
+  <ion-button class="large-button">
+    <!-- <ion-icon slot="end" name="location-sharp"></ion-icon> -->
+    Añadir punto
+  </ion-button>
   <ion-menu
     side="start"
     menuId="first"
@@ -61,19 +90,29 @@
           <ion-label> Agregar punto </ion-label>
           <ion-icon name="location-outline" slot="start"></ion-icon>
         </ion-item>
-        <ion-item lines="none" (click)="navigateTo('landing')" >
+        <ion-item lines="none" (click)="navigateTo('landing')">
           <ion-label> Agregar bazar </ion-label>
-          <ion-icon name="layers-outline" slot="start"></ion-icon>
+          <ion-icon name="scan-outline" slot="start"></ion-icon>
         </ion-item>
         <ion-item lines="none" (click)="navigateTo('landing')">
           <ion-label> Pantalla de inicio </ion-label>
-          <ion-icon name="arrow-undo-outline" slot="start"></ion-icon>
+          <ion-icon name="return-down-back-outline" slot="start"></ion-icon>
         </ion-item>
         <ion-item lines="none" (click)="navigateTo('home')">
           <ion-label> Cerrar sesisón </ion-label>
           <ion-icon name="log-out-outline" slot="start"></ion-icon>
         </ion-item>
+        <ion-item-divider mode="md"> </ion-item-divider>
+        <ion-item lines="none" (click)="navigateTo('home')">
+          <ion-label> Preguntas frecuentes </ion-label>
+          <ion-icon name="help-circle-outline" slot="start"></ion-icon>
+        </ion-item>
+        <ion-item lines="none" (click)="navigateTo('home')">
+          <ion-label> Versión 0.1 </ion-label>
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+        </ion-item>
       </ion-list>
+      <p>Locales cuu</p>
     </ion-content>
   </ion-menu>
 </ion-content>

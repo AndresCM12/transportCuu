@@ -1,3 +1,5 @@
+$width: 95%;
+
 ion-title {
   font-family: "Rubik-medium";
   font-style: normal;
@@ -9,7 +11,7 @@ ion-title {
   margin-top: 68px;
   margin-bottom: 68px;
   padding: 0px;
-  width: 90%;
+  width: $width;
   max-width: 650px;
   margin-inline: auto;
 }
@@ -20,10 +22,10 @@ ion-title {
   background-color: var(--foreground-color);
   border-radius: 10px;
   margin-bottom: 55px;
-  width: 90%;
+  width: $width;
   max-width: 650px;
   margin-inline: auto;
-  background-image: url('../../../assets/images/map_preview.png');
+  background-image: url("../../../assets/images/preview.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,7 +37,7 @@ h6 {
   font-size: 14px;
   margin-block-start: 0px;
   margin-block-end: 8px;
-  width: 90%;
+  width: $width;
   max-width: 650px;
   margin-inline: auto;
 }
@@ -48,10 +50,11 @@ ion-button {
 
 ion-list {
   background: var(--background-color);
-  width: 90%;
+  width: $width;
   max-width: 650px;
   margin-inline: auto;
   border-radius: 10px;
+  padding-top: 4px;
   ion-item {
     --padding-start: 24px;
     --padding-end: 6px;
@@ -60,19 +63,23 @@ ion-list {
     --transition: background-color 15ms linear;
     --border-style: none;
     --border-width: none;
-    font-size: 14px;
     margin-bottom: 8px;
     margin-top: 0px;
     ion-label {
       color: var(--text-color);
-      h3{
+      h3 {
         font-family: "Rubik-medium";
-        font-size: 16px;
+        font-size: 14px;
+        margin-bottom: 0px;
       }
-      p{
+      p {
         font-family: "Rubik";
         font-size: 12px;
+        opacity: 80%;
       }
+    }
+    ion-icon{
+      opacity: 60%!important;
     }
   }
 }

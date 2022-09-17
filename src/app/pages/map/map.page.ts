@@ -8,6 +8,7 @@ import mapboxgl from 'mapbox-gl';
   styleUrls: ['./map.page.scss'],
 })
 export class MapPage implements OnInit {
+  isSearchBarClicked = false;
   map;
   mapVisibility = false;
   constructor(private menu: MenuController, private router: Router) {}
@@ -35,5 +36,17 @@ export class MapPage implements OnInit {
   }
   navigateTo(route) {
     this.router.navigate([route]);
+  }
+  toggleSearchBarResults(forceState?: string) {
+    if (forceState && forceState === 'close') {
+      this.isSearchBarClicked = false;
+      return;
+    }
+    if (forceState && forceState === 'open') {
+      this.isSearchBarClicked = true;
+      return;
+    }
+
+    this.isSearchBarClicked = !this.isSearchBarClicked;
   }
 }

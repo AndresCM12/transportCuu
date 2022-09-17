@@ -1,34 +1,50 @@
-<ion-content class="ion-padding-horizontal">
-
-
+<ion-header mode="ios">
+  <ion-toolbar
+    style="
+      --background: var(--background-color);
+      --border-style: none !important;
+      --border-width: 0px;
+    "
+  >
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding-horizontal" mode="md">
   <ion-title mode="md"
     >¿Qué deseas <br />
     hacer hoy?</ion-title
   >
-  <h6 (click)="navigateTo()">ver mapa</h6>
+
+  <h6 (click)="navigateTo()">Visitar el mapa</h6>
   <div class="map-preview" (click)="navigateTo()"></div>
 
   <h6>últimos registros</h6>
   <ion-list>
     <ion-item lines="full" detail="true">
+      <ion-icon slot="start" name="location-sharp"></ion-icon>
       <ion-label>
         <h3>Tacos el tommy</h3>
         <p>Viernes 4:40pm, 10/09/2022</p>
       </ion-label>
     </ion-item>
     <ion-item detail="true">
+      <ion-icon slot="start" name="location-sharp"></ion-icon>
       <ion-label
         ><h3>Bar de puebla</h3>
         <p>Viernes 4:40pm, 10/09/2022</p></ion-label
       >
     </ion-item>
     <ion-item detail="true">
+      <ion-icon slot="start" name="location-sharp"></ion-icon>
+
       <ion-label
         ><h3>La cantina buena</h3>
         <p>Viernes 4:40pm, 10/09/2022</p></ion-label
       >
     </ion-item>
     <ion-item detail="true">
+      <ion-icon slot="start" name="location-sharp"></ion-icon>
+
       <ion-label
         ><h3>Lonches el guero</h3>
         <p>Viernes 4:40pm, 10/09/2022</p></ion-label

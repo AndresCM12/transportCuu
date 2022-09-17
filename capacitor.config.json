@@ -1,6 +1,23 @@
 {
-	"appId": "io.ionic.starter",
+	"appId": "io.ionic.transportecuu",
 	"appName": "transporte-cuu",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "launchAutoHide": true,
+      "backgroundColor": "#39aaa4",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": true,
+      "androidSpinnerStyle": "large",
+      "iosSpinnerStyle": "small",
+      "spinnerColor": "#346720",
+      "splashFullScreen": true,
+      "splashImmersive": true,
+      "layoutName": "launch_screen",
+      "useDialog": true
+    }
+  }
 }
