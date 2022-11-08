@@ -5,13 +5,22 @@
       (click)="openSideMenu()"
       name="menu-sharp"
     ></ion-icon>
-    <h1 (click)="toggleSearchBarResults('open')">Busca puntos en la ciudad</h1>
+    <!-- <h1 >Search markers</h1> -->
+    <ion-item>
+      <ion-input
+        type="text"
+        (click)="toggleSearchBarResults('open')"
+        placeholder="Search markers"
+      ></ion-input>
+    </ion-item>
+
     <ion-icon
       slot="icon-only"
       [name]="!isSearchBarClicked ? 'search-sharp' : 'close-sharp'"
       (click)="toggleSearchBarResults()"
     ></ion-icon>
   </div>
+
   <div id="searchBarResults" [ngClass]="isSearchBarClicked ? 'opened' : ''">
     <ion-list>
       <ion-item lines="full" detail="true">
@@ -46,7 +55,10 @@
       </ion-item>
     </ion-list>
   </div>
-  <div id="breadCrumbsContainer">
+
+  <!--
+    TODO: implement breadcrumbs
+    <div id="breadCrumbsContainer">
     <div class="breadCrumb">
       <p>Zona norte</p>
     </div>
@@ -57,13 +69,24 @@
     <div class="breadCrumb">
       <p>Bazares</p>
     </div>
-  </div>
+  </div> -->
+
   <div id="map" [ngClass]="!mapVisibility? 'hidden': 'visible' "></div>
 
-  <ion-button class="large-button">
-    <!-- <ion-icon slot="end" name="location-sharp"></ion-icon> -->
-    Añadir punto
-  </ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="location-sharp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="analytics-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
   <ion-menu
     side="start"
     menuId="first"
@@ -77,42 +100,43 @@
       </ion-avatar>
       <ion-text>
         <h1>Andrés Chávez</h1>
-        <h2>Administrador</h2>
+        <h2>Admin</h2>
       </ion-text>
     </div>
+
     <ion-content>
       <ion-list>
         <ion-item lines="none" (click)="navigateTo('landing')">
-          <ion-label> Ver registros </ion-label>
+          <ion-label> View records </ion-label>
           <ion-icon name="file-tray-full-outline" slot="start"></ion-icon>
         </ion-item>
         <ion-item lines="none" (click)="navigateTo('landing')">
-          <ion-label> Agregar punto </ion-label>
+          <ion-label> Add marker </ion-label>
           <ion-icon name="location-outline" slot="start"></ion-icon>
         </ion-item>
         <ion-item lines="none" (click)="navigateTo('landing')">
-          <ion-label> Agregar bazar </ion-label>
+          <ion-label> Add zone </ion-label>
           <ion-icon name="scan-outline" slot="start"></ion-icon>
         </ion-item>
         <ion-item lines="none" (click)="navigateTo('landing')">
-          <ion-label> Pantalla de inicio </ion-label>
+          <ion-label> Home screen </ion-label>
           <ion-icon name="return-down-back-outline" slot="start"></ion-icon>
         </ion-item>
         <ion-item lines="none" (click)="navigateTo('home')">
-          <ion-label> Cerrar sesisón </ion-label>
+          <ion-label> log out </ion-label>
           <ion-icon name="log-out-outline" slot="start"></ion-icon>
         </ion-item>
         <ion-item-divider mode="md"> </ion-item-divider>
         <ion-item lines="none" (click)="navigateTo('home')">
-          <ion-label> Preguntas frecuentes </ion-label>
+          <ion-label> FAQ </ion-label>
           <ion-icon name="help-circle-outline" slot="start"></ion-icon>
         </ion-item>
         <ion-item lines="none" (click)="navigateTo('home')">
-          <ion-label> Versión 0.1 </ion-label>
+          <ion-label> Version 0.1 </ion-label>
           <ion-icon name="information-circle-outline" slot="start"></ion-icon>
         </ion-item>
       </ion-list>
-      <p>Locales cuu</p>
+      <p>Places cuu</p>
     </ion-content>
   </ion-menu>
 </ion-content>

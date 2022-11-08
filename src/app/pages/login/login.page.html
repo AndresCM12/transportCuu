@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true">
+  <div class="form-wrapper">
+    <ion-title mode="md"
+      >Welcome <br />
+      back !</ion-title
+    >
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-item fill="solid">
+        <ion-label position="floating">User</ion-label>
+        <ion-input
+          required
+          formControlName="user"
+          type="text"
+          placeholder="User"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item fill="solid">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          required
+          formControlName="password"
+          type="password"
+          placeholder="Password"
+        ></ion-input>
+      </ion-item>
+
+      <ion-button
+        block
+        class="medium-button"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Log in
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

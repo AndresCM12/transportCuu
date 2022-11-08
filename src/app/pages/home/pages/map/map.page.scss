@@ -9,9 +9,11 @@ $width: 95%;
 #map.visible {
   opacity: 1;
 }
+
 #map.hidden {
   opacity: 0;
 }
+
 ion-toolbar {
   --background: var(--background-color);
   height: 55px;
@@ -24,6 +26,7 @@ ion-toolbar {
     font-size: 20px;
   }
 }
+
 #searchBar {
   &.opened {
     width: $width;
@@ -52,11 +55,24 @@ ion-toolbar {
     font-size: 14px;
     margin: 0px;
   }
+  ion-item {
+    --background: var(--background-color);
+    --highlight-height: 2px;
+    --highlight-color-focused: var(--background-color);
+    --highlight-color-valid: var(--background-color);
+    --highlight-color-invalid: var(--background-color);
+    ion-input {
+      background: var(--background-color);
+      color: #ffffff;
+    }
+  }
+
   ion-icon {
     font-size: 24px;
     cursor: pointer;
   }
 }
+
 #searchBarResults {
   &.opened {
     border-top-left-radius: 0px;
@@ -64,6 +80,7 @@ ion-toolbar {
     max-height: 300px;
     box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.24);
   }
+  max-width: 450px;
   transition: all 0.3s ease-in-out;
   max-height: 0px;
   overflow-y: hidden;
@@ -111,15 +128,39 @@ ion-toolbar {
     }
   }
 }
+
 ion-content {
   --background: var(--foreground-color);
 }
+
 ion-button {
   position: absolute;
   z-index: 2;
   bottom: 20px;
   left: calc(50%);
   transform: translateX(-50%);
+}
+
+ion-fab-button::part(native) {
+  border-radius: 15px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+ion-fab > ion-fab-button {
+  --background: #5a6887;
+}
+
+ion-fab-list {
+  ion-fab-button {
+    --background: var(--background-color);
+    ion-icon {
+      color: black;
+    }
+    --color: var(--background-color);
+    color: var(--background-color);
+  }
 }
 #breadCrumbsContainer {
   display: flex;
@@ -212,5 +253,12 @@ ion-menu {
     left: 50%;
     opacity: 50%;
     transform: translateX(-50%);
+  }
+}
+
+ion-footer {
+  ion-tab-bar {
+    --background: var(--background-color);
+    --border: none;
   }
 }

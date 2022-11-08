@@ -10,7 +10,7 @@ export class LandingPage implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {}
-  navigateTo() {
-    this.router.navigate(['map']);
+  navigateTo(route: string) {
+    this.router.navigate([route]);
   }
 }

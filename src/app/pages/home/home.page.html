@@ -1,26 +1,13 @@
-<ion-content [fullscreen]="true">
-  <div class="form-wrapper">
-    <ion-title mode="md"
-      >Bienvenido <br />
-      de nuevo</ion-title
-    >
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <ion-label>Usuario<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input required formControlName="user" type="text"></ion-input>
-      <ion-label>Contraseña<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input
-        required
-        formControlName="password"
-        type="password"
-      ></ion-input>
-      <ion-button
-        block
-        class="medium-button"
-        type="submit"
-        [disabled]="loginForm.invalid"
-      >
-        Iniciar sesión
-      </ion-button>
-    </form>
-  </div>
-</ion-content>
+<ion-tabs>
+  <ion-tab-bar>
+    <ion-tab-button tab="map">
+      <ion-icon name="map-outline"></ion-icon>
+      <ion-label>Mapa</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="registros">
+      <ion-icon name="file-tray-full-outline"></ion-icon>
+      <ion-label>Registros</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -11,14 +11,15 @@
 </ion-header>
 <ion-content class="ion-padding-horizontal" mode="md">
   <ion-title mode="md"
-    >¿Qué deseas <br />
-    hacer hoy?</ion-title
+    >What are you <br />
+    doing today?</ion-title
   >
 
-  <h6 (click)="navigateTo()">Visitar el mapa</h6>
-  <div class="map-preview" (click)="navigateTo()"></div>
+  <h6 (click)="navigateTo('home')">View map</h6>
+  <div class="map-preview" (click)="navigateTo('home')"></div>
 
-  <h6>últimos registros</h6>
+  <h6>Last markers</h6>
+
   <ion-list>
     <ion-item lines="full" detail="true">
       <ion-icon slot="start" name="location-sharp"></ion-icon>
@@ -51,7 +52,14 @@
       >
     </ion-item>
   </ion-list>
-  <ion-button class="medium-button" expand="block" fill="clear" shape="round">
-    Ver todos
+
+  <ion-button
+    (click)="navigateTo('home/registros')"
+    class="medium-button"
+    expand="block"
+    fill="clear"
+    shape="round"
+  >
+    view all
   </ion-button>
 </ion-content>
